@@ -85,7 +85,7 @@ class Translator(object):
             raise NotTranslated('Translation API returned and empty response.')
         if PY2:
             result = result.encode('utf-8')
-        if result.strip() == source.strip():
+        if result == source:
             raise NotTranslated('Translation API returned the input string unchanged.')
 
     def _request(self, url, host=None, type_=None, data=None):
